@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معلومات حساب تلجرام</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fab fa-telegram"></i> معلومات حساب تلجرام</h1>
+            <p>عرض تفاصيل حسابك في تلجرام</p>
+        </div>
+
+        <!-- شاشة الخطأ -->
+        <div class="error-screen" id="errorScreen">
+            <div class="error-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <h2>عذراً!</h2>
+            <p>يجب فتح هذا التطبيق من داخل تطبيق تلجرام</p>
+            <button class="telegram-btn" onclick="openInTelegram()">
+                <i class="fab fa-telegram"></i> افتح في تلجرام
+            </button>
+        </div>
+
+        <!-- شاشة التحميل -->
+        <div class="loading" id="loadingScreen">
+            <div class="loader"></div>
+            <p>جاري تحميل معلومات حسابك...</p>
+        </div>
+
+        <!-- بطاقة الملف الشخصي -->
+        <div class="profile-card" id="profileCard">
+            <div class="profile-header">
+                <div class="profile-badge" id="premiumBadge">
+                    <i class="fas fa-crown"></i> بريميوم
+                </div>
+                <div class="avatar-container">
+                    <div class="default-avatar" id="defaultAvatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <img src="" alt="صورة المستخدم" class="avatar" id="userAvatar" style="display: none;">
+                </div>
+                <h2 class="profile-name" id="userFullName">اسم المستخدم</h2>
+                <p class="profile-username" id="userName">@username</p>
+            </div>
+
+            <div class="profile-content">
+                <div class="info-section">
+                    <h3 class="section-title"><i class="fas fa-id-card"></i> معلومات الحساب</h3>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <div class="info-label">
+                                <i class="fas fa-hashtag"></i> معرف المستخدم
+                            </div>
+                            <div class="info-value" id="userId">123456789</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">
+                                <i class="fas fa-at"></i> اسم المستخدم
+                            </div>
+                            <div class="info-value" id="username">@username</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">
+                                <i class="fas fa-crown"></i> حالة الحساب
+                            </div>
+                            <div class="info-value">
+                                <span class="badge" id="accountType">عادي</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">
+                                <i class="fas fa-calendar-plus"></i> تاريخ الإنشاء
+                            </div>
+                            <div class="info-value" id="createdDate">غير معروف</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-section">
+                    <h3 class="section-title"><i class="fas fa-info-circle"></i> معلومات أخرى</h3>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <div class="info-label">
+                                <i class="fas fa-language"></i> اللغة
+                            </div>
+                            <div class="info-value" id="language">غير معروف</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">
+                                <i class="fas fa-robot"></i> هل هو بوت؟
+                            </div>
+                            <div class="info-value" id="isBot">لا</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- زر التحديث -->
+                <button class="refresh-btn" id="refreshBtn">
+                    <i class="fas fa-sync-alt"></i> تحديث المعلومات
+                </button>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2023 - Telegram Mini App</p>
+        </div>
+    </div>
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
